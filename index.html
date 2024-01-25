@@ -17,17 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet">
   </head>
   <body>
-	<div class="container">
-		<div class="container-texto">
-			<h1>Explorando o Mundo</h1>
-			<h1 class="second-text">Tridimensional</h1>
-			<p>Clique na tela para mover a câmera</p>
-			<span>By John Victor</span>
-		</div>
-		<div class="container-canvas">
-			<canvas id="c"></canvas>
-		</div>
+	<div class="container-texto">
+		<h1>Explorando o Mundo</h1>
+		<h1 class="second-text">Tridimensional</h1>
+		<p>Clique na tela para mover a câmera</p>
+		<span>By John Victor</span>
 	</div>
+    <canvas id="c"></canvas>
+	<a href="https://johnviti.github.io/3D-Animation/build/three.module.js">Click</a>
   </body>
 <script type="importmap">
 {
@@ -49,18 +46,18 @@ function main() {
 	const renderer = new THREE.WebGLRenderer( { antialias: true, canvas } );
 
 	const fov = 45;
-	const aspect = 1; //define a proporcao da tela
+	const aspect = 2; // the canvas default
 	const near = 0.1;
 	const far = 100;
 	const camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
-	camera.position.set(20, 10, 0 ); //posicao da camera x,y,z
+	camera.position.set( 0, 10, 20 );
 
 	const controls = new OrbitControls( camera, canvas );
 	controls.target.set( 0, 5, 0 );
 	controls.update();
 
 	const scene = new THREE.Scene();
-	scene.background = new THREE.Color( 'white' );
+	scene.background = new THREE.Color( 'black' );
 
 	{
 
@@ -138,7 +135,7 @@ function main() {
 	{
 
 		const gltfLoader = new GLTFLoader();
-		gltfLoader.load( 'scene.gltf', ( gltf ) => {
+		gltfLoader.load( 'scene.glb', ( gltf ) => {
 
 			const root = gltf.scene;
 			scene.add( root );
@@ -170,7 +167,7 @@ function main() {
 		const needResize = canvas.width !== width || canvas.height !== height;
 		if ( needResize ) {
 
-			renderer.setSize( width , height , false ); 
+			renderer.setSize( width, height, false );
 
 		}
 
