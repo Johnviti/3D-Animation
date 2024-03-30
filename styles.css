@@ -160,3 +160,99 @@ background-color: var(--cor-branco);
     font-size: 16px;
 }
 }
+
+
+/* // fake 3d */
+
+.circle-bg {
+    z-index: 1000;
+    width: 35.75vh; 
+    height: 35.75vh; 
+    max-height: 390px; 
+    max-width: 390px; 
+    perspective: 750px;
+    background-color: #000000;
+    background-image: linear-gradient(to top, #fff, #000000);
+    border-radius: 35.75vh; 
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+
+.plu-mockup-wrapper-flipped {
+    width: 23.4vh; 
+    max-width: 260px; 
+    transform-style: preserve-3d;
+    background-color: #f6f6f6;
+    border-radius: 3.25vh; 
+    margin: auto;
+    padding: 5.2vh 5px; 
+    transition: all 0.6s cubic-bezier(.075, .82, .165, 1);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: perspective(750px) rotateX(12.5deg) rotateY(2.5deg) rotateZ(-7.5deg) translate(-1.625vh, 1.625vh); 
+    box-shadow: -1px 4.55px 0 1px #dbdbdb, inset 0 0 5px rgba(0, 0, 0, .1), -23px 33px 25px -15px rgba(0, 0, 0, .11);
+}
+.plu-mockup-wrapper-flipped:hover {
+    transform: perspective(750px) translate(0, 6.5vh); 
+    box-shadow: 0 0 #dbdbdb, inset 0 0 5px rgba(0, 0, 0, .1), 0 16.25px 16.25px -10.5px rgba(0, 0, 0, .1);
+}
+
+.plu-mockup-home-button.flipped {
+    box-shadow: inset -0.65px 1.3px rgba(0, 0, 0, .025); 
+}
+
+.plu-mockup-home-button {
+    width: 3.575vh; 
+    height: 3.575vh; 
+    border: 0.65px solid rgba(0, 0, 0, .025); 
+    border-radius: 130px; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0.65px 1.3px rgba(0, 0, 0, .025); 
+}
+
+.plu-mockup-speaker.flipped {
+    box-shadow: inset -0.65px 1.3px rgba(0, 0, 0, .025); 
+}
+.plu-mockup-speaker {
+    width: 4.55vh; 
+    height: 0.65vh; 
+    border: 0.65px solid rgba(0, 0, 0, .025); 
+    border-radius: 65px; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: absolute;
+    top: 2.4375vh; 
+    left: 0;
+    right: 0;
+    box-shadow: inset 0.65px 1.3px rgba(0, 0, 0, .025); 
+}
+
+
+.image-phone {
+    position: relative;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+.container-image-phone{
+    position: relative;
+    height: 100%;
+    text-align: center;
+    background: #dddddd;
+    clear: both;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
